@@ -1,0 +1,124 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-radar: var(--primary);
+  --color-cyan: var(--secondary-blue);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+  --color-amber: var(--amber);
+  --color-sky: var(--secondary-blue);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.35rem;
+  --background: #eef4fa;
+  --foreground: #1d2d42;
+  --card: #ffffff;
+  --card-foreground: #1d2d42;
+  --popover: #ffffff;
+  --popover-foreground: #1d2d42;
+  --primary: #193b63;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f7fb;
+  --secondary-foreground: #1d2d42;
+  --secondary-blue: #416a96;
+  --light-blue: #dce8f5;
+  --muted: #f4f7fb;
+  --muted-foreground: #1d2d42;
+  --accent: #dce8f5;
+  --accent-foreground: #193b63;
+  --destructive: oklch(0.64 0.23 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: #d8e0ea;
+  --input: #d8e0ea;
+  --ring: #416a96;
+  --radar: #193b63;
+  --cyan: #416a96;
+  --sky: #416a96;
+  --warn: oklch(0.75 0.18 55);
+  --danger: oklch(0.64 0.23 25);
+  --amber: oklch(0.86 0.16 90);
+  --chart-1: var(--primary);
+  --chart-2: var(--secondary-blue);
+  --chart-3: var(--warn);
+  --chart-4: var(--light-blue);
+  --chart-5: var(--amber);
+  --sidebar: var(--background);
+  --sidebar-foreground: #1d2d42;
+  --sidebar-primary: #193b63;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dce8f5;
+  --sidebar-accent-foreground: #193b63;
+  --sidebar-border: #d8e0ea;
+  --sidebar-ring: #416a96;
+  --grid-line: transparent;
+  --glow-radar: none;
+  --scope-bg: #102a47;
+  --scope-radar: oklch(0.86 0.24 145);
+  --scope-cyan: oklch(0.83 0.14 200);
+  --scope-warn: oklch(0.75 0.18 55);
+  --scope-danger: oklch(0.64 0.23 25);
+  --scope-amber: oklch(0.86 0.16 90);
+  --scope-sky: oklch(0.68 0.16 250);
+  --scope-muted: oklch(0.66 0.04 230);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@utility hud-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+}
+@utility glow-radar { box-shadow: var(--glow-radar); }
+@utility text-glow { text-shadow: none; }
